@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:text="The images are courtesy of Icon Finder: \nhttp://iconfinder.com/"
+    android:autoLink="web"
+    android:textSize="16sp"
+    android:textAlignment="center"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:orientation="vertical" />
