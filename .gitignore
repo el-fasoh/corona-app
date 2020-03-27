@@ -12,7 +12,7 @@
 /captures
 .externalNativeBuild
 .cxx
-./idea
+./idea/*
 *.apk
 *.json
 *.png
