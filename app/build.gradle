@@ -68,6 +68,9 @@ dependencies {
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
     implementation 'com.github.heetch:Android-country-picker:1.0.6'
     implementation 'com.google.android.material:material:1.1.0'
+    implementation 'com.airbnb.android:lottie:3.4.0'
+    implementation 'com.yarolegovich:discrete-scrollview:1.4.9'
+
 
     //navigation
     implementation 'androidx.navigation:navigation-fragment:2.2.1'
@@ -120,4 +123,5 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
 }
