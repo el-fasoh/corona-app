@@ -1,15 +1,12 @@
 package com.fasoh.corona.repositories
 
+import com.fasoh.corona.database.GlobalStatisticsDao
 import com.fasoh.corona.models.global.GlobalStatisticsItem
 import com.fasoh.corona.network.TheVirusTrackerApi
-import com.fasoh.corona.database.GlobalStatisticsDao
 import io.reactivex.Completable
 import io.reactivex.Flowable
-import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import timber.log.Timber
-import java.util.*
 
 interface GlobalStatisticsRepository {
 

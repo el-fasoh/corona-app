@@ -1,9 +1,9 @@
 package com.fasoh.corona.di
 
 import com.fasoh.corona.database.CountryStatisticItemDao
-import com.fasoh.corona.network.TheVirusTrackerApi
 import com.fasoh.corona.database.GlobalStatisticsDao
 import com.fasoh.corona.database.TimelineItemDao
+import com.fasoh.corona.network.TheVirusTrackerApi
 import com.fasoh.corona.repositories.*
 import org.koin.dsl.module
 

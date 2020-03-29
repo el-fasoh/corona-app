@@ -6,7 +6,6 @@ import com.fasoh.corona.models.StatisticsDto
 import com.fasoh.corona.repositories.StatisticsRepository
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import timber.log.Timber
 
 interface GetTimelineDataUseCase {
     fun execute(

@@ -7,12 +7,10 @@ import com.fasoh.corona.models.timeline.Timeline
 import com.fasoh.corona.models.timeline.TimelineDataItem
 import com.fasoh.corona.network.TheVirusTrackerApi
 import io.reactivex.Completable
-import io.reactivex.Flowable
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import timber.log.Timber
-import kotlin.collections.ArrayList
 
 interface StatisticsRepository {
     fun getTimeLineDataByCode(month: Int, code: String): Single<StatisticsDto>

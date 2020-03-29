@@ -6,7 +6,6 @@ import com.fasoh.corona.models.global.GlobalStatisticsItem
 import com.ungagroup.mwananchi.db.BaseDao
 import io.reactivex.Flowable
 import io.reactivex.Maybe
-import io.reactivex.Single
 
 @Dao
 interface GlobalStatisticsDao: BaseDao<GlobalStatisticsItem> {

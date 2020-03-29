@@ -5,8 +5,6 @@ import androidx.room.Query
 import com.fasoh.corona.models.StatisticsDto
 import com.fasoh.corona.models.timeline.TimelineDataItem
 import com.ungagroup.mwananchi.db.BaseDao
-import io.reactivex.Flowable
-import io.reactivex.Scheduler
 import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
 

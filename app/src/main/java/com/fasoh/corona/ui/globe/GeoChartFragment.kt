@@ -12,9 +12,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.fasoh.corona.R
 import com.fasoh.corona.models.timeline.TimelineDataItem
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
-import com.heetch.countrypicker.Utils
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject

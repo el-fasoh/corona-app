@@ -4,7 +4,6 @@ import com.fasoh.corona.AutoDisposable
 import com.fasoh.corona.extentions.addTo
 import com.fasoh.corona.models.global.GlobalStatisticsItem
 import com.fasoh.corona.repositories.GlobalStatisticsRepository
-import timber.log.Timber
 
 interface GetGlobalStatisticsUseCase {
     fun execute(callback: GetGlobalStatisticsUseCaseCallback, autoDisposable: AutoDisposable)

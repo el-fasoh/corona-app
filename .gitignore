@@ -17,3 +17,4 @@
 *.json
 *.png
 keys.properties
+.idea/

@@ -3,9 +3,9 @@ package com.fasoh.corona.di
 import android.content.Context
 import androidx.room.Room
 import com.fasoh.corona.database.CountryStatisticItemDao
-import com.ungagroup.mwananchi.db.CoronaDatabase
 import com.fasoh.corona.database.GlobalStatisticsDao
 import com.fasoh.corona.database.TimelineItemDao
+import com.ungagroup.mwananchi.db.CoronaDatabase
 import org.koin.dsl.module
 
 val databaseModule = module {

@@ -1,7 +1,6 @@
 package com.fasoh.corona.ui.home
 
 import android.os.Bundle
-import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +9,7 @@ import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import com.fasoh.corona.MoodArrayAdapter
+import com.fasoh.corona.CountryArrayAdapter
 import com.fasoh.corona.R
 import com.fasoh.corona.databinding.FragmentHomeBinding
 import com.fasoh.corona.extentions.hide
@@ -63,7 +62,7 @@ class HomeFragment : Fragment() {
          items.addAll( Utils.parseCountries(Utils.getCountriesJSON(activity)))
 
 
-        val countryAdapter = MoodArrayAdapter(activity!!, items)
+        val countryAdapter = CountryArrayAdapter(activity!!, items)
         binding.numberPicker.adapter = countryAdapter
         binding.numberPicker.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(p0: AdapterView<*>?) {}

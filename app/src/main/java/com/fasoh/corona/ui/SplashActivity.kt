@@ -6,7 +6,6 @@ import android.os.Handler
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import com.fasoh.corona.MainActivity
-import com.fasoh.corona.MoodArrayAdapter
 import com.fasoh.corona.R
 import com.fasoh.corona.extentions.show
 import com.fasoh.corona.repositories.SettingsRepository

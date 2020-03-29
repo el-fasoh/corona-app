@@ -13,8 +13,8 @@ import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import com.fasoh.corona.CountryArrayAdapter
 import com.fasoh.corona.MainActivity
-import com.fasoh.corona.MoodArrayAdapter
 import com.fasoh.corona.R
 import com.fasoh.corona.databinding.FragmentDashboardBinding
 import com.fasoh.corona.models.timeline.TimelineDataItem
@@ -140,7 +140,7 @@ class DashboardFragment : Fragment() {
             com.heetch.countrypicker.Utils.getCountriesJSON(activity)
         )
 
-        val countryAdapter = MoodArrayAdapter(activity.applicationContext, items)
+        val countryAdapter = CountryArrayAdapter(activity.applicationContext, items)
 
         binding.month.adapter = monthAdapter
         binding.month.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {

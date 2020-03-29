@@ -1,6 +1,5 @@
 package com.fasoh.corona.models
 
-import androidx.room.Ignore
 import com.google.gson.annotations.SerializedName
 
 open class BaseStatisticItem (

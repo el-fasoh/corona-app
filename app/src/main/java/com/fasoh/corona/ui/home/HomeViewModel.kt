@@ -3,7 +3,6 @@ package com.fasoh.corona.ui.home
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.fasoh.corona.models.BaseStatisticItem
 import com.fasoh.corona.models.country.CountryDataItem
 import com.fasoh.corona.models.global.GlobalStatisticsItem

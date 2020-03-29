@@ -23,7 +23,6 @@ class CountryStatisticsRepositoryImpl(
                 if(it == 0){
                     api.getCountryStatistics(code)
                         .take(1)
-
                         .flatMap {data->
                             val dataItem =  data.countrydata[0]
                             dataItem.id = code

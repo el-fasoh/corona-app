@@ -3,7 +3,7 @@ package com.fasoh.corona
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 
-class UngaBindingAdapter {
+class CoronaBindingAdapter {
 
     companion object {
 

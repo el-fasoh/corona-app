@@ -9,7 +9,7 @@ import com.heetch.countrypicker.Country
 import com.heetch.countrypicker.Utils
 import kotlinx.android.synthetic.main.country_with_flag.view.*
 
-class MoodArrayAdapter(
+class CountryArrayAdapter(
     ctx: Context,
     items: MutableList<Country>
 ) :

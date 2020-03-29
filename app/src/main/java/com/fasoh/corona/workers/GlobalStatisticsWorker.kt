@@ -5,13 +5,9 @@ import androidx.work.*
 import com.fasoh.corona.BuildConfig
 import com.fasoh.corona.database.GlobalStatisticsDao
 import com.fasoh.corona.network.TheVirusTrackerApi
-import com.fasoh.corona.repositories.GlobalStatisticsRepository
-import io.reactivex.Single
-import io.reactivex.internal.operators.single.SingleJust
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 import timber.log.Timber
-import java.lang.Exception
 import java.util.concurrent.TimeUnit
 
 class GlobalStatisticsWorker(

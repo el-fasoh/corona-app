@@ -7,7 +7,6 @@ import com.fasoh.corona.database.CountryStatisticItemDao
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 import timber.log.Timber
-import java.lang.Exception
 import java.util.*
 import java.util.concurrent.TimeUnit
 
