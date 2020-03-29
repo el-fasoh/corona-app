@@ -27,4 +27,8 @@
         android:name="com.fasoh.corona.ui.KeepSafeFragment"
         android:label="Keeping Safe"
         tools:layout="@layout/fragment_keep_safe" />
+    <fragment
+        android:id="@+id/navigation_map"
+        android:name="com.fasoh.corona.ui.globe.GeoChartFragment"
+        android:label="Geo Distribution" />
 </navigation>

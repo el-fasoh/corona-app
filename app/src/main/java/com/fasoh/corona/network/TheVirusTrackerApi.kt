@@ -17,5 +17,5 @@ interface TheVirusTrackerApi {
     fun getGlobalStatistics(@Query("global") global: String? = "stats"):Flowable<GlobalStatistics>
 
     @GET("timeline/map-data.json")
-    fun getTimelineData():Flowable<List<Timeline>>
+    fun getTimelineData():Single<Timeline>
 }

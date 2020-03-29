@@ -5,6 +5,10 @@
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/title_dashboard" />
+    <item
+        android:id="@+id/navigation_map"
+        android:icon="@drawable/ic_globe"
+        android:title="@string/title_geo" />
 
     <item
         android:id="@+id/navigation_dashboard"

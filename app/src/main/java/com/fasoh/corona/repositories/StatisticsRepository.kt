@@ -8,49 +8,67 @@ import com.fasoh.corona.models.timeline.TimelineDataItem
 import com.fasoh.corona.network.TheVirusTrackerApi
 import io.reactivex.Completable
 import io.reactivex.Flowable
+import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import timber.log.Timber
 import kotlin.collections.ArrayList
 
 interface StatisticsRepository {
-    fun getTimeLineDataByCode(month: Int, code: String): Flowable<StatisticsDto>
+    fun getTimeLineDataByCode(month: Int, code: String): Single<StatisticsDto>
+
+    fun getTimeLineDataByDate(date: String): Single<List<TimelineDataItem>>
 }
 
 class StatisticsRepositoryImpl(
     private val api: TheVirusTrackerApi,
     private val timelineItemDao: TimelineItemDao
 ) : StatisticsRepository {
-    override fun getTimeLineDataByCode(month: Int, code: String): Flowable<StatisticsDto> {
+    override fun getTimeLineDataByCode(month: Int, code: String): Single<StatisticsDto> {
         return timelineItemDao.count()
-            .take(1)
             .flatMap {
                 if (it == 0) {
                     api.getTimelineData()
-                        .take(1)
-                        .flatMap { timelines ->
-                            saveTimelineData(formatTimelines(timelines))
+                        .flatMap { timeline ->
+                            saveTimelineData(formatTimelines(timeline))
                                 .andThen(timelineItemDao.getTimelineData(month,code))
-                        }
+                        }.subscribeOn(Schedulers.io())
 
                 } else {
                     timelineItemDao.getTimelineData(month,code)
                 }
+            }.doOnError {
+                Timber.e(it)
+            }.subscribeOn(Schedulers.io())
+    }
+
+    override fun getTimeLineDataByDate(date: String): Single<List<TimelineDataItem>> {
+        return  timelineItemDao.count()
+            .flatMap {
+                if (it == 0) {
+                    api.getTimelineData()
+                        .flatMap { timeline ->
+                            saveTimelineData(formatTimelines(timeline))
+                                .andThen(timelineItemDao.selectDailyStatistics(date))
+                        }
+                        .doOnError {
+                            Timber.e(it)
+                        }
+                }else{
+                    timelineItemDao.selectDailyStatistics(date)
+                }
+            }.doOnError {
+                Timber.e(it)
             }
     }
 
-    private fun formatTimelines(timelines: List<Timeline>): ArrayList<TimelineDataItem> {
-        val list = ArrayList<TimelineDataItem>()
-        timelines.forEach { timeline ->
-            timeline.data.forEach { timelineDataItem ->
-                timelineDataItem.date = timeline.date
-                timelineDataItem.month = timelineDataItem.date!!.split("/")[0].toInt()
-                timelineDataItem.longDate = timeline.date?.dateToMilliSeconds()
-                list.add(timelineDataItem)
-            }
+    private fun formatTimelines(timeline: Timeline): List<TimelineDataItem> {
+        timeline.data.forEach { timelineDataItem ->
+            timelineDataItem.month = timelineDataItem.date!!.split("/")[0].toInt()
+            timelineDataItem.longDate = timelineDataItem.date?.dateToMilliSeconds()
 
         }
-        return list
+        return timeline.data
     }
 
     private fun saveTimelineData(timelines: List<TimelineDataItem>): Completable {

@@ -20,7 +20,7 @@ class StatisticsWorker (context: Context,
     override fun doWork(): Result {
         return try {
             Timber.e("Statistics worker starting pruning: ${timelineItemDao.deleteAll()} entries")
-            val v= statisticsRepo.getTimeLineDataByCode(1, "US").blockingFirst()
+            val v= statisticsRepo.getTimeLineDataByCode(1, "US").blockingGet()
             when {
                 v.items.isEmpty() -> {
                     Result.failure()

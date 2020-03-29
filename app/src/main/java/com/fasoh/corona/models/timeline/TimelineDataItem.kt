@@ -17,22 +17,19 @@ data class TimelineDataItem(
 
     var month: Int? = 0,
 
-    @SerializedName("countrylabel")
-    val countryLabel: String? = null,
-
     @field:SerializedName("countrycode")
     val countryCode: String? = null,
 
-    @SerializedName("totaldeaths")
+    @SerializedName("deaths")
     var totalDeaths: String = "0",
 
-    @SerializedName("totalcases")
+    @SerializedName("cases")
     val totalCases: String = "0",
 
-    @SerializedName("totalrecovered")
+    @SerializedName("recovered")
     val totalRecovered: String = "0"
 ){
     override fun toString(): String {
-        return "TimelineDataItem(id=$id, date=$date, longDate=$longDate, countryLabel=$countryLabel, countryCode=$countryCode, totalDeaths=$totalDeaths, totalCases=$totalCases, totalRecovered=$totalRecovered)"
+        return "TimelineDataItem(id=$id, date=$date, longDate=$longDate, countryCode=$countryCode, totalDeaths=$totalDeaths, totalCases=$totalCases, totalRecovered=$totalRecovered)"
     }
 }

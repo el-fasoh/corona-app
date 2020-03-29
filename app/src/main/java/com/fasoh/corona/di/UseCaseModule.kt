@@ -26,4 +26,11 @@ val useCaseModule = module {
     }
 
     single { provideGetTimelineDataUseCase(get()) }
+
+    fun provideGetDistinctDailyWorldStatisticsImpl(statisticsRepository: StatisticsRepository): GetDistinctDailyWorldStatisticsUseCase {
+        return GetDistinctDailyWorldStatisticsUseCaseImpl(statisticsRepository)
+    }
+    single {
+        provideGetDistinctDailyWorldStatisticsImpl(get())
+    }
 }

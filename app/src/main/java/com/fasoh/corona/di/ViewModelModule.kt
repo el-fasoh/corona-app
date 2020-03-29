@@ -1,6 +1,7 @@
 package com.ungagroup.mwananchi.di.modules
 
 import com.fasoh.corona.ui.dashboard.DashboardViewModel
+import com.fasoh.corona.ui.globe.GeoChartViewModel
 import com.fasoh.corona.ui.home.HomeViewModel
 import com.fasoh.corona.ui.notifications.NotificationsViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -12,4 +13,6 @@ val viewModelModule = module {
     viewModel { HomeViewModel(get(), get()) }
 
     viewModel { NotificationsViewModel() }
+
+    viewModel { GeoChartViewModel(get()) }
 }

@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.webkit.JavascriptInterface
+import com.heetch.countrypicker.Utils
 import kotlinx.android.synthetic.main.activity_map.*
 import org.json.JSONArray
 import org.json.JSONException
@@ -70,7 +71,7 @@ class MapActivity : AppCompatActivity() {
                 println(jArray.toString())
                 //              // send value from java class to html javascript function
                 this@MapActivity.runOnUiThread{
-                        webView.loadUrl("javascript:setJson(" + jArray + ")");
+                        webView.loadUrl("javascript:setJson($jArray)");
                     }
 
 
