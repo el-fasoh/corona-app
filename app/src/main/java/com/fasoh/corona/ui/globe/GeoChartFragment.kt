@@ -62,7 +62,7 @@ class GeoChartFragment : Fragment() {
         @get:JavascriptInterface
         val valueJson: Unit
             get() {
-                activity!!.runOnUiThread {
+                requireActivity().runOnUiThread {
                     val jArray = JSONArray()
                     items.forEach {
                         val jObject = JSONObject()
